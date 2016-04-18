@@ -1,8 +1,7 @@
 %computes the integral gain for a state space controller.
-% the new system's state-space is also returned (Ac,...Dc)
 % Ke the integral constant
-% Ks 
-function [Ke,K,Ac,Bc,Cc,Dc]= clIntegralGain(A,B,C,ps)
+% Ks the state-controller gain
+function [Ke,K]= clIntegralGain(A,B,C,ps)
   syms s ke;
 
   r = size(A,1);
