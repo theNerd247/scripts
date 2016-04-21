@@ -1,10 +1,15 @@
 %computes the integral gain for a state space controller.
 % Ke the integral constant
 % Ks the state-controller gain
-function [Ke,K]= clIntegralGain(A,B,C,ps)
+function [Ke,K,ac]= clIntegralGain(A,B,C,ps)
   syms s ke;
 
   r = size(A,1);
+
+  if(max(size(ps)) != r+1)
+    printf("ps must be a vector of length: %i\n",r+1);
+    return
+  end
 
   K = [];
   for i = 1:r

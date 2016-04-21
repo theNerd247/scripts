@@ -12,7 +12,7 @@ function [Phi,as] = calcPhi(A,p)
   Phi = [];
 
   ps = sym(1);
-  for i = 1:size(p)
+  for i = 1:max(size(p))
     ps = ps*(s - p(i));
   endfor
 

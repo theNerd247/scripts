@@ -1,5 +1,5 @@
 % finds the state-controller gain K for a given state space model
-function [k,E,F,a,phi] = clStateGain(A,B,p)
+function [k,E,F,as,phi] = clStateGain(A,B,p)
   n = columns(A);
 
   E = zeros(1,n);
@@ -10,7 +10,7 @@ function [k,E,F,a,phi] = clStateGain(A,B,p)
     F = [F,A^(i)*B];
   endfor
 
-  Phi = calcPhi(A,p);
+  [Phi,as] = calcPhi(A,p);
 
-  k = E*inv(F)*phi;
+  k = E*inv(F)*Phi;
 endfunction

@@ -1,4 +1,4 @@
-function [c,CM] = ctrlAbility(A,B)
+function [c,CM] = controlable(A,B)
 	CM = [];
   for i = 0:(columns(A)-1)
     CM = [CM,A^(i)*B];
