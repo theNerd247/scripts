@@ -1,5 +1,5 @@
 % finds the state-controller gain K for a given state space model
-function [k,E,F,as,phi] = clStateGain(A,B,p)
+function [k,E,F,as,Phi] = clStateGain(A,B,p)
   n = columns(A);
 
   E = zeros(1,n);

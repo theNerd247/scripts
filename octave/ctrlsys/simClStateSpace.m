@@ -3,8 +3,8 @@
 % r - the closed loop input signal. If r == -1 nothing is plotted
 % if r = [] then the step response is plotted. Otherwise lsim is called using r
 % a the system input (see symoblic package for reference).
-function clSys = simClStateSpace(A,B,C,D,k,r = [])
-  clSys = ss((A-B*k),B,(C-B*k),B);
+function clSys = simClStateSpace(A,B,C,k,r = [])
+  clSys = ss((A-B*k),B,C);
   
   if(r == -1)
     return;

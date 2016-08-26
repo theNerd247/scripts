@@ -1,9 +1,10 @@
-function [Ao,Bo,Co,L] = observer(A,B,C,ps)
+function [L,Ao,Bo,Co] = observer(A,B,C,ps)
   syms s;
 
   r = size(A,1);
 
   [o,V,rnk] = observeable(A,C);
+  size(V)
 
   if(!o)
     printf("The system is not observable\n");
